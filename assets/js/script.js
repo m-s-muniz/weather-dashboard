@@ -78,4 +78,39 @@ function searchCity(event){
 
 
 
+//Get a handle on divs and insert weather data from current data or local stored data
+function displayWeather(data){
+
+    //console.log(data);
+
+    //set data list items that needed (noon for each of the 6 days)
+    const dayArray = [2,10,18,26,34,39];
+    for(i = 0; i < dayArray.length; i++){
+
+         //convert the time and date 
+        const date = new Date(timestamp * 1000); // changed it to milliseconds
+        const timestamp = data.list[dayArray[i]].dt; // timestamp in seconds
+        const month = date.getMonth() + 1; // add 1 to get 1-12 month range
+        const day = date.getDate();
+        const year = date.getFullYear();
+        var formattedDate = `${month}/${day}/${year}`;
+        // console.log(formattedDate);
+
+        // get the weather icon data
+        var dataSymbol = data.list[dayArray[i]].weather[0].icon;
+         console.log(dataSymbol);        
+
+       // get the weather icon symbol from the weather site and display it
+       var daySymbol =  '<figure><image src="https://openweathermap.org/img/wn/'+dataSymbol+'@2x.png"><figurecaption>'+data.list[dayArray[i]].weather[0].description+'</figurecaption></figure>';
+
+       // get the Temp, Wind, and Humidity requested weather data
+       var dayTemp = data.list[dayArray[i]].main.temp;
+       var dayWind = data.list[dayArray[i]].wind.speed;
+       var dayHumid = data.list[dayArray[i]].main.humidity;
+       console.log(dayTemp);
+
+
+    }
+}
+
 createButtons();
