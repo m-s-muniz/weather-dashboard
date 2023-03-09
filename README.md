@@ -23,3 +23,12 @@ WHEN I click on a city in the search history
 THEN I am again presented with current and future conditions for that city
 ```
 
+
+
+
+![Alt text](Screen%20Shot1.png)
+
+
+Link to site
+https://m-s-muniz.github.io/weather-dashboard/
+
