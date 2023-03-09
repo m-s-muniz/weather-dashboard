@@ -7,3 +7,13 @@ header{
     text-align: center;
     
 }
+#day0{
+    border: solid 1px black;
+}
+.forecast{
+    /* background-color: #323d4f; */
+    background-color: #323d4f;
+    color: white;
+    margin-left: 5px;
+    margin-right: 5px;
+}
